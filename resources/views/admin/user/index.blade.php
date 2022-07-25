@@ -7,8 +7,8 @@
   <div class="d-flex justify-content-between" >
     <h2 style="font-weight:bold; ">User List</h2>
     <div>
-      <a href="" class="btn btn-outline-dark">Send mail</a>   
-      <a href="" class="btn btn-primary">+ Add new</a>
+      <a href="" class="btn btn-outline-dark">Send mail</a>
+      <a href="" class="btn btn-primary">+ Add new</a>   
     </div>
   </div>
     <div class="table-responsive" >

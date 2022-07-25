@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::name('admin.')->prefix('admin')->group(function() {
+Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('user', UserController::class);
 });
-
