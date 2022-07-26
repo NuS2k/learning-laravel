@@ -8,7 +8,7 @@
     <h2 style="font-weight:bold; ">User List</h2>
     <div>
       <a href="" class="btn btn-outline-dark">Send mail</a>
-      <a href="" class="btn btn-primary">+ Add new</a>   
+      <a href="{{ route('admin.user.create') }}" class="btn btn-primary">+ Add new</a>   
     </div>
   </div>
     <div class="table-responsive" >
@@ -19,41 +19,19 @@
               <th> Email </th>
               <th> Action </th>
           </tr>
+          @if(!empty($users))
+          @foreach($users as $user)
           <tr>
-              <th><i class="fa-regular fa-user"></i></th>
-              <td>Hoàng A Dậu</td>
-              <td>hoangadieu123@gmail.com</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-              <th ><i class="fa-regular fa-user"></i></th>
-              <td>Phạm Kì Khôi</td>
-              <td>phamkikhoi123@gmail.com</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-              <th ><i class="fa-regular fa-user"></i></th>
-              <td>Ngô Thái Dương</td>
-              <td>thaiduongvietliekhongdau@gmail.com</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-              <th ><i class="fa-regular fa-user"></i></th>
-              <td>Phạm Ngọc Long</td>
-              <td>Longpndzprovip@gmail.com</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-danger">Delete</button></td>
-              </tr>
-              <tr>
-              <th ><i class="fa-regular fa-user"></i></th>
-              <td>Finn Anderson</td>
-              <td>Karrigancsgo@gmail.com</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-danger">Delete</button></td>
-        </tr>
+              <td> <i class="fa-solid fa-square-user"></i> </td>
+              <td> {{ $user['name'] }} </td>
+              <td> {{ $user['email'] }} </td>
+              <td>
+                  <button class="btn btn-primary"> Edit </button>
+                  <button class="btn btn-danger"> Delete </button>
+              </td>
+          </tr>
+          @endforeach
+          @endif
     </table>
   </div>
   <nav aria-label="Page navigation example">
