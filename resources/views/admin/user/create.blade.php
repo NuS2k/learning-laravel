@@ -25,14 +25,14 @@
       <label for="name" class="form-label"> Name </label>
       <input name="name" type="text" class="form-control" id="name" placeholder="">
       @error('name')
-      <span class="text-danger text-left">{{ $errors->first('name') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
       @enderror
     </div>
     <div class="">
       <label for="email" class="form-label">Email address</label>
       <input name="email" type="email" class="form-control" id="email" placeholder="">
       @error('email')
-      <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
       @enderror
     </div>
     <div class="row">
@@ -40,7 +40,7 @@
         <label for="password" class="form-label">Password</label>
         <input name="password" type="password" class="form-control" id="password" placeholder="">
         @error('password')
-        <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+        <span class="text-danger text-left">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-md-6">
@@ -53,27 +53,27 @@
       <input name="address" type="text" class="form-control" id="address" placeholder="">
     </div>
     @error('address')
-      <span class="text-danger text-left">{{ $errors->first('address') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
     @enderror
     <div class="">
       <label for="phone" class="form-label">Phone Number</label>
       <input name="phone" type="text" class="form-control" id="phone" placeholder="">
     </div>
     @error('phone')
-      <span class="text-danger text-left">{{ $errors->first('phone') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
     @enderror
     <div class="">
       <label for="fblink" class="form-label">Facebook Link</label>
       <input name="fblink" type="text" class="form-control" id="fblink" placeholder="https://example.com">
       @error('fblink')
-      <span class="text-danger text-left">{{ $errors->first('fblink') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
       @enderror
     </div>
     <div class="">
       <label for="ytlink" class="form-label">Youtube</label>
       <input name="ytlink" type="text" class="form-control" id="ytlink" placeholder="https://example.com">
       @error('ytlink')
-      <span class="text-danger text-left">{{ $errors->first('ytlink') }}</span>
+      <span class="text-danger text-left">{{ $message }}</span>
       @enderror
     </div>
     <div class="">
