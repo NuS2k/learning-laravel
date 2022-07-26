@@ -13,8 +13,8 @@ class UserController extends Controller
         return view('admin.user.index', [
             'users' => $this->getSessionUsers(),
         ]);
-        
     }
+
     public function create()
     {
         return view('admin.user.create');
@@ -26,13 +26,12 @@ class UserController extends Controller
 
         return view('admin.user.index', [
             'users' => $this->getSessionUsers(),
-    
+
         ]);
     }
 
-    private function getSessionUsers() {
+    private function getSessionUsers()
+    {
         return collect(Session::get('users'));
     }
-
-    
 }

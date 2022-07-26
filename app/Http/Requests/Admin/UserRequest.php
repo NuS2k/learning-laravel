@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\Admin;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Rules\ValidateNotStartWithNumber;
 use App\Rules\ValidateEmailUnique;
+use App\Rules\ValidateNotStartWithNumber;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
 {
@@ -34,7 +34,7 @@ class UserRequest extends FormRequest
                 'regex:/^(?=.*[a-z])(?=.*[!@#$%^&"*()\-_=+{};:,<.>]).{8,255}+$/',
                 'confirmed',
             ],
-            'fblink' => 'url',  
+            'fblink' => 'url',
             'ytlink' => 'url',
         ];
     }
