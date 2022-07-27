@@ -52,9 +52,11 @@ class UserController extends Controller
     public function sendMail(SendMailUserProfileRequest $request)
     {
         $fileAttached = null;
+
         if ($request->file('attachment')) {
             $fileAttached = $request->file('attachment');
         }
+
         $users = $this->getSessionUsers();
 
         $targetMail = $request->validated()['mail'];
@@ -65,6 +67,7 @@ class UserController extends Controller
 
             return redirect()->back();
         }
+        
         $user = $users->firstWhere('email', $targetMail);
         $this->mailService->sendInformUserProfile($user, $fileAttached);
 

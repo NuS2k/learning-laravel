@@ -1,5 +1,14 @@
 @extends('layouts.admin.master')
 @section('content')
+@if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+@endif
 <div class="col-md-7 mb-3">
   <div class="row">
     <div class="col-md-12">
@@ -20,6 +29,9 @@
     <br>
     <div class="mb-3">
       <input class="form-control" type="file" id="attachment" name="attachment">
+      @error('attachment')
+      <span class="text-danger text-left">{{ $message }}</span>
+      @enderror
     </div>
     <div class="d-flex justify-content-center">
       <div>

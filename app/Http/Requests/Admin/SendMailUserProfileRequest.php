@@ -15,7 +15,7 @@ class SendMailUserProfileRequest extends FormRequest
     {
         return [
             'mail' => 'required',
-            'attachment' => 'nullable',
+            'attachment' => 'nullable | mimes:docx,pdf,pptx,xlsx, png,jpg, mkv,mp4',
         ];
     }
 }

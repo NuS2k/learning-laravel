@@ -27,7 +27,7 @@ class InformUserProfile extends Mailable
 
         if ($this->fileAttached) {
             $mail->attach($this->fileAttached, [
-                'as' => ''.$this->fileAttached->getClientOriginalName(),
+                'as' => $this->fileAttached->getClientOriginalName(),
             ]);
         }
 
