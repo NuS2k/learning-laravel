@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::name('user.')->prefix('user')->group(function () {
         Route::get('/form-send-email', [UserController::class, 'getMailForm'])->name('form-send-email');

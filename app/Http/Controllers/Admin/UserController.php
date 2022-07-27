@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SendMailUserProfileRequest;
 use App\Http\Requests\Admin\UserRequest;
-use Illuminate\Support\Facades\Session;
 use App\Services\MailService;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -67,7 +67,7 @@ class UserController extends Controller
 
             return redirect()->back();
         }
-        
+
         $user = $users->firstWhere('email', $targetMail);
         $this->mailService->sendInformUserProfile($user, $fileAttached);
 
