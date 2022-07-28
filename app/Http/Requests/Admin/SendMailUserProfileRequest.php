@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\ValidateNoExeFile;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SendMailUserProfileRequest extends FormRequest
@@ -15,7 +16,10 @@ class SendMailUserProfileRequest extends FormRequest
     {
         return [
             'mail' => 'required',
-            'attachment' => 'nullable | mimes:docx,pdf,pptx,xlsx, png,jpg, mkv,mp4',
+            'attachment' => [
+                'nullable',
+                new ValidateNoExeFile(),
+            ],
         ];
     }
 }
