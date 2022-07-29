@@ -36,6 +36,8 @@ class UserRequest extends FormRequest
             ],
             'fblink' => 'url',
             'ytlink' => 'url',
+            'address' => 'required',
+            'phone' => 'required|numeric',
         ];
     }
 }
