@@ -20,28 +20,28 @@
                     <span  style="padding-left: 20px">Please check your infomation. Is it correctly</span>
                     <br><br>
                     <span>
-                    <strong style="display: inline-block; width: 48%;"> Name </strong>
+                    <strong style="display: inline-block; width: 48%; padding: 20px;"> Name </strong>
                     <emphasis style="display: inline-block; width: 48%; text-align: right;"> {{ $user['name'] }} </emphasis>
                     </span>
                     <hr>
                     <span>
-                    <strong style="display: inline-block; width: 48%;"> Email </strong>
+                    <strong style="display: inline-block; width: 48%; padding: 20px;"> Email </strong>
                     <emphasis style="display: inline-block; width: 48%; text-align: right;"> {{ $user['email'] }} </emphasis>
                     </span>
                     <hr>
                     <span>
-                    <strong style="display: inline-block; width: 48%;"> Phone </strong>
+                    <strong style="display: inline-block; width: 48%; padding: 20px;"> Phone </strong>
                     <emphasis style="display: inline-block; width: 48%; text-align: right;"> {{ $user['phone']}} </emphasis>
                     </span>
                     <hr>
                     <span>
-                    <strong style="display: inline-block; width: 48%;"> Address </strong>
+                    <strong style="display: inline-block; width: 48%; padding: 20px;"> Address </strong>
                     <emphasis style="display: inline-block; width: 48%; text-align: right;"> {{ $user['address'] }} </emphasis>
                     </span>
                     <br>      
                 </div>
                     <div class="col-md-12 ">
-                    <button href="{{ route('admin.user.index') }}"  style="align-text: right; text-decoration: none; border: 1px solid blue; background: blue; color: white; padding: 15px;" type="button" class="btn btn-primary btn-lg">User Profile</button>
+                    <button href="{{ route('admin.user.index') }}"  style="align-text: right; text-decoration: none; border: 1px solid blue; background: blue; color: white; padding: 10px; margin-left: 500px;" type="button" class="btn btn-primary btn-lg">User Profile</button>
                     </div>
             </div>
         </div>
