@@ -8,10 +8,9 @@ class ValidateNoExeFile implements Rule
 {
     public function passes($attribute, $value)
     {
-        $word = 'exe';
         $value->getClientOriginalExtension();
 
-        return (bool) strcmp($value->getClientOriginalExtension(), $word);
+        return (bool) strcmp($value->getClientOriginalExtension(), 'exe');
     }
 
     public function message()
