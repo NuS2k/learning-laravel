@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name')->unique();
-            $table->char('email')->unique()->nullable();
-            $table->char('code')->unique()->nullable();
-            $table->char('address')->unique()->nullable();
-            $table->char('type', 10)->nullable();
-            $table->char('phone', 100)->nullable();
-            $table->char('hotline');
+            $table->string('name')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('code')->unique()->nullable();
+            $table->string('address')->unique()->nullable();
+            $table->string('type', 10)->nullable();
+            $table->string('phone', 100)->nullable();
+            $table->string('hotline');
             $table->string('province_code');
             $table->string('institution_code');
             $table->tinyInteger('main_branch');
@@ -32,12 +32,8 @@ return new class extends Migration
             $table->string('twitter_url')->nullable();
             $table->string('youtube_url')->nullable();
             $table->string('fax_number')->nullable();
-            $table->timestamp();
-            $table->softDeletes($column = 'deleted_at');
-
-            $table->foreign('taggable_id')->references('id')->on('users')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

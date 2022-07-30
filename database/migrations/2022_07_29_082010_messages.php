@@ -14,18 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->char('room', 255);
+            $table->increments('id');
+            $table->string('room', 255);
             $table->unsignedInteger('sender_id');
-            $table->char('sender_type', 255);
+            $table->string('sender_type', 255);
             $table->unsignedInteger('receiver_id');
-            $table->char('receiver_type', 255);
+            $table->string('receiver_type', 255);
             $table->text('content');
-            $table->char('content_type', 255)->default('text');
-            $table->unsignedInteger('association_id')->default(null);
-            $table->char('association_type', 255)->default(null);
-            $table->timestamp()->default(null);
-            $table->softDeletes($column = 'deleted_at')->default(null);
+            $table->string('content_type', 255)->default('text');
+            $table->unsignedInteger('association_id');
+            $table->string('association_type', 255);
+            $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('sender_id')->references('id')->on('users')
             ->onUpdate('cascade')

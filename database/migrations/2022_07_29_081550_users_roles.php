@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users_role', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('role_id');
-            $table->timestamp();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('role_id');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
             ->onUpdate('cascade')

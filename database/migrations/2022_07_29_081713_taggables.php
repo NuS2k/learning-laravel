@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('taggable_id');
             $table->string('taggable_type');
             $table->tinyInteger('type')->nullable;
-            $table->timestamp();
+            $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
 
             $table->foreign('tag_id')->references('id')->on('tags')

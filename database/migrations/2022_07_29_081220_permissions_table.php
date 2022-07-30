@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255)->unique();
             $table->string('key', 255)->unique();
-            $table->unsignedBigInteger('permission_group_id')->unique();
+            $table->unsignedBigInteger('permission_group_id');
             $table->timestamps();
 
             $table->foreign('permission_group_id')->references('id')->on('permissions_group')
