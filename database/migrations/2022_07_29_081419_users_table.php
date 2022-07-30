@@ -22,17 +22,18 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
             $table->tinyInteger('type')->comment('For detect user')->nullable();
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->boolean('closed')->default('false')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->timestamp('verified_at')->nullable();
+            $table->boolean('closed')->default(false);
             $table->string('code')->unique()->nullable();
             $table->tinyInteger('social_type')->nullable();
-            $table->unsignedInteger('social_id')->unique()->nullable();
+            $table->string('social_id')->unique()->nullable();
             $table->string('social_name')->nullable();
             $table->string('social_nickname')->nullable();
             $table->string('social_avatar')->nullable();
             $table->text('description');
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes('deleted_at');
 
             $table->foreign('school_id')->references('id')->on('schools')
             ->onUpdate('cascade')

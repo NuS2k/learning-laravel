@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('room', 255);
-            $table->unsignedInteger('sender_id');
+            $table->unsignedBigInteger('sender_id');
             $table->string('sender_type', 255);
             $table->unsignedInteger('receiver_id');
             $table->string('receiver_type', 255);
