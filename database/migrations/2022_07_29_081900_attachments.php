@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('attachments', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('uuid', 36);
             $table->string('attachable_type', 255);
             $table->unsignedInteger('attachable_id');

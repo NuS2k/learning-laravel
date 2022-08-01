@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permissions_group', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('permission_groups', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name', 255)->unique();
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permissions_group');
+        Schema::dropIfExists('permission_groups');
     }
 };

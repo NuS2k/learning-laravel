@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name', 255)->unique();
             $table->string('key', 255)->unique();
-            $table->unsignedBigInteger('permission_group_id');
+            $table->unsignedInteger('permission_group_id')->unique();
             $table->timestamps();
 
-            $table->foreign('permission_group_id')->references('id')->on('permissions_group')
+            $table->foreign('permission_group_id')->references('id')->on('permission_groups')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
