@@ -9,7 +9,7 @@ class Message extends Model
 {
     use HasFactory;
 
-    public function Transporter()
+    public function sender()
     {
         return $this->belongsTo(User::class);
     }
