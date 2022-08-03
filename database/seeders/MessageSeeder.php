@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Message;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
-use App\Models\User;
-use App\Models\Message;
 
 class MessageSeeder extends Seeder
 {

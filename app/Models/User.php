@@ -28,4 +28,19 @@ class User extends Model
     {
         return $this->hasMany(Message::class);
     }
+
+    protected $fillable = [
+        'name',
+        'email',
+        'username',
+        'password',
+        'address',
+        'parent_id',
+        'school_id',
+        'parent_id',
+        'social_id',
+        'social_name',
+        'user_id',
+        'role_id',
+    ];
 }

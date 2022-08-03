@@ -13,4 +13,8 @@ class Tag extends Model
     {
         return $this->morphedByMany(User::class, 'taggable');
     }
+
+    protected $fillable = [
+        'name',
+    ];
 }

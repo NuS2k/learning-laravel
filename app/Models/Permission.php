@@ -18,4 +18,10 @@ class Permission extends Model
     {
         return $this->belongsToMany(Role::class);
     }
+
+    protected $fillable = [
+        'name',
+        'key',
+        'permission_group_id',
+    ];
 }

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tag;
+use App\Models\Taggable;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
-use App\Models\Tag;
-use App\Models\User;
-use App\Models\Taggable;
 
 class TaggableSeeder extends Seeder
 {

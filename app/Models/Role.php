@@ -18,4 +18,10 @@ class Role extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    protected $fillable = [
+        'name',
+        'role_id',
+        'permission_id',
+    ];
 }
