@@ -17,6 +17,7 @@ class School extends Model
     protected $fillable = [
         'name',
         'email',
+        'code',
         'address',
         'type',
         'phone',
@@ -26,6 +27,10 @@ class School extends Model
         'main_branch',
         'zip_code',
         'attribute_information_setting_date',
+        'old_school_investigation_number',
+        'facebook_url',
+        'twitter_url',
+        'youtube_url',
         'fax_number',
     ];
 }

@@ -20,6 +20,7 @@ class Message extends Model
         'sender_type',
         'receiver_id',
         'receiver_type',
+        'content',
         'content_type',
         'association_id',
         'association_type',
