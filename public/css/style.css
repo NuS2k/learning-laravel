@@ -1,0 +1,9 @@
+.user-avatar {
+    vertical-align: middle;
+    max-height: 4rem;
+    height: auto;
+}
+.user-info {
+    line-height: 4rem;
+    margin: 0;
+}
