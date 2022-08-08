@@ -14,7 +14,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::name('admin.')->prefix('admin')->group(function () {
+Route::name('admin.')->prefix('admin')->middleware(['auth', 'verified', 'verify.admin'])->group(function () {
     Route::name('user.')->prefix('user')->group(function () {
         Route::get('/form-send-email', [UserController::class, 'getMailForm'])->name('form-send-email');
         Route::post('/send', [UserController::class, 'sendMail'])->name('send');

@@ -59,4 +59,4 @@ class RegisterController extends Controller
                     'Account created. Please check your mailbox for verification email.'
                 );
     }
-}   
+}
