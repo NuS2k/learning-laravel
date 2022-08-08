@@ -30,6 +30,10 @@ class VerificationController extends Controller
             throw new AuthorizationException();
         }
 
+        if ($user == null) {
+            throw new AuthorizationException();
+        }
+
         if ($user->markEmailAsVerified()) {
             event(new Verified($user));
         }

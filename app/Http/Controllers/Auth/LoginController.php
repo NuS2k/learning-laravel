@@ -27,9 +27,7 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $credentials = $request->getCredentials();
-
-        if (!Auth::attempt($credentials)) {
+        if (Auth::attempt($request->getCredentials())) {
             $request->session()->regenerate();
 
             return redirect()->intended('dashboard');
@@ -38,5 +36,8 @@ class LoginController extends Controller
         return back()->withErrors(
             'The provided credentials do not match our records.',
         );
+
+        
+       
     }
 }

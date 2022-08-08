@@ -44,7 +44,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $validator = $this->validator($request->all())->validate();
+        $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
 
@@ -59,4 +59,4 @@ class RegisterController extends Controller
                     'Account created. Please check your mailbox for verification email.'
                 );
     }
-}
+}   
