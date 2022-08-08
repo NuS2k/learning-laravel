@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class() extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -16,7 +15,7 @@ return new class() extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
-            $table->string('email', 32);
+            $table->string('email', 200);
             $table->string('username', 50);
             $table->string('password', 200);
             $table->string('address')->nullable();
@@ -31,7 +30,7 @@ return new class() extends Migration
             $table->string('social_name')->nullable();
             $table->string('social_nickname')->nullable();
             $table->string('social_avatar')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at');
 

@@ -23,8 +23,16 @@
           @foreach($users as $user)
           <tr>
               <td> <i class="fa-solid fa-square-user"></i> </td>
-              <td> {{ $user['name'] }} </td>
-              <td> {{ $user['email'] }} </td>
+              <td>
+                  <p class="user-info">
+                      {{ $user->name }}
+                  </p>
+              </td>
+              <td>
+                  <p class="user-info">
+                      {{ $user->email }}
+                  </p>
+              </td>
               <td>
                   <button class="btn btn-primary"> Edit </button>
                   <button class="btn btn-danger"> Delete </button>

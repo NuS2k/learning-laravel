@@ -15,8 +15,8 @@ class MessageFactory extends Factory
             'receiver_type' => 'user',
             'content' => fake()->sentence(),
             'content_type' => 'text',
-            'association_id' => '',
-            'association_type' => '',
+            'association_id' => fake()->unique()->numerify('#####'),
+            'association_type' => fake()->randomDigit(),
         ];
     }
 }
