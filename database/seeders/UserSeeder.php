@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\School;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
@@ -12,10 +11,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()
-            ->count(20)
-            ->state(new Sequence(
-                fn ($sequence) => ['school_id' => School::all()->random()],
-            ))
+            ->state([
+                'name' => 'root',
+                'email' => 'root@gmail.com',
+                'username' => 'root',
+                'password' => Hash::make('123@123'),
+                'type' => User::TYPES['admin'],
+                'verified_at' => now(),
+            ])
             ->create();
     }
 }
