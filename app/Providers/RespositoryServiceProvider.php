@@ -6,11 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class RespositoryServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
     public function register()
     {
         $this->app->bind(
@@ -19,11 +14,6 @@ class RespositoryServiceProvider extends ServiceProvider
         );
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
     public function boot()
     {
         //

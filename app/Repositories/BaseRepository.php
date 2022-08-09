@@ -10,7 +10,7 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function getAll(array $input = [])
     {
-        return $this->model->getAll($input);
+        return $this->model->getAll();
     }
 
     public function paginate(array $inputs = [], $perPage = 10)
