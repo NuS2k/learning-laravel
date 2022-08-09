@@ -3,13 +3,12 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Providers\RepositoryServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(
+        $this->app->register(
             [App\Providers\RespositoryServiceProvider::class]
         );
     }
