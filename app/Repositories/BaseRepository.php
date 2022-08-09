@@ -6,19 +6,23 @@ use App\Repositories\BaseRepositoryInterface;
 
 class BaseRepository implements BaseRepositoryInterface 
 {
-    public function __construct(Model $model)
+    protected $model;
+
+    public function getAll(array $input = [])
     {
-        $this->model = $model;
-    }
- 
-    public function create(array $attributes): Model
-    {
-        return $this->model->create($attributes);
+        return $this->model->getAll($input);
     }
 
-    public function update(array $attributes): Model
+    public function paginate(array $inputs = [], $perPage = 10)
     {
-        return $this->model->update($attributes);
+        $query = $this->model->query();
+
+        return $query->paginate($perPage);
+    }
+ 
+    public function save(array $input, array $conditions = ['id' => null])
+    {
+        return $this->model->updateOrCreate($conditions, $input);
     }
 
     public function deleteById($id)
@@ -28,6 +32,6 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function findById($id)
     {
-        return $this->model->findOrFail($id);
+        return $this->model->find($id);
     }
 }

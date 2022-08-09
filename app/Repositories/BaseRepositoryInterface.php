@@ -3,10 +3,11 @@
 namespace App\Repositories;
 
 interface BaseRepositoryInterface
-{
-    public function create($attributes = []);
+{   public function getAll(array $inputs = []);
 
-    public function update($attributes = []);
+    public function paginate(array $inputs = [], $perPage = 10);
+
+    public function save(array $input, array $conditions = ['id' => null]);
 
     public function deleteById($id);
 
