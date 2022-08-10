@@ -8,9 +8,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->register(
-            RespositoryServiceProvider::class
-        );
+        $this->app->register(RepositoryServiceProvider::class);
     }
 
     public function boot()
