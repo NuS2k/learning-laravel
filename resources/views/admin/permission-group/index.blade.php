@@ -10,6 +10,7 @@
           <a href="{{ route('admin.permission-group.create') }}" class="btn btn-primary">Create</a>
         </div>
       </div>
+      <br>
       <div class="table-responsive">
         <table class="table table-hover table-light">
             <tr>

@@ -8,7 +8,7 @@ class PermissionRequest extends FormRequest
 {
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -19,7 +19,7 @@ class PermissionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', Rule::unique('permission_groups')->ignore($this->permission_group)],
+
         ];
     }
 }
