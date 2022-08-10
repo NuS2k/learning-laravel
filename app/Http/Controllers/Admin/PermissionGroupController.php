@@ -24,7 +24,7 @@ class PermissionGroupController extends Controller
 
     public function create()
     {
-        return view('admin.permission-group.create');
+        return view('admin.permission-group.form');
     }
 
     public function store(PermissionGroupRequest $request)
@@ -38,6 +38,10 @@ class PermissionGroupController extends Controller
     {
         $permissionGroup = $this->permissionGroupRepository->findById($id);
 
+        if (!$permissionGroup){
+            abort(404);
+        }
+
         return view('admin.permission-group.show', [
             'permissionGroup' => $permissionGroup,
         ]);
@@ -47,7 +51,11 @@ class PermissionGroupController extends Controller
     {
         $permissionGroup = $this->permissionGroupRepository->findById($id);
 
-        return view('admin.permission-group.edit', [
+        if (!$permissionGroup){
+            abort(404);
+        }
+
+        return view('admin.permission-group.form', [
             'permissionGroup' => $permissionGroup,
         ]);
     }

@@ -12,9 +12,4 @@ class PermissionGroupRepository extends BaseRepository implements PermissionGrou
     {
         $this->model = $model;
     }
-
-    public function all(): Collection
-    {
-        return $this->model->all();
-    }
 }
