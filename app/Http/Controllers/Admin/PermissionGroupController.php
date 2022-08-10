@@ -38,7 +38,7 @@ class PermissionGroupController extends Controller
     {
         $permissionGroup = $this->permissionGroupRepository->findById($id);
 
-        if (!$permissionGroup){
+        if (!$permissionGroup) {
             abort(404);
         }
 
@@ -51,7 +51,7 @@ class PermissionGroupController extends Controller
     {
         $permissionGroup = $this->permissionGroupRepository->findById($id);
 
-        if (!$permissionGroup){
+        if (!$permissionGroup) {
             abort(404);
         }
 

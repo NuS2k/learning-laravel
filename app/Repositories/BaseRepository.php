@@ -2,9 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Repositories\BaseRepositoryInterface; 
-
-class BaseRepository implements BaseRepositoryInterface 
+class BaseRepository implements BaseRepositoryInterface
 {
     protected $model;
 
@@ -19,7 +17,7 @@ class BaseRepository implements BaseRepositoryInterface
 
         return $query->paginate($perPage);
     }
- 
+
     public function save(array $input, array $conditions = ['id' => null])
     {
         return $this->model->updateOrCreate($conditions, $input);
