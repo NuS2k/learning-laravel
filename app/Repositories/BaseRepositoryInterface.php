@@ -3,7 +3,8 @@
 namespace App\Repositories;
 
 interface BaseRepositoryInterface
-{   public function getAll(array $inputs = []);
+{
+    public function getAll(array $inputs = []);
 
     public function paginate(array $inputs = [], $perPage = 10);
 

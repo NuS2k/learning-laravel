@@ -3,13 +3,14 @@
         <div class="col-md-4 mb-4">
           <div class="sidenav">
             <ul class="list-unstyled"> System 
-              <a href="/admin/user" class="list-group-item list-group-item-action">User management</a>
-              <a href="/admin/role" class="list-group-item">Role management</a>
-              <a href="/admin/permission" class="list-group-item">Permission management</a>        
+              <a href="{{ route('admin.user.index') }}" class="list-group-item list-group-item-action">User management</a>
+              <a href="{{ route('admin.role.index') }}" class="list-group-item">Role management</a>
+              <a href="{{ route('admin.permission.index') }}" class="list-group-item">Permission management</a>
+              <a href="{{ route('admin.permission-group.index') }}" class="list-group-item">Permission group management</a>        
             </ul>
             <ul class="list-unstyled">  Catalog
-              <a href="/admin/product" class="list-group-item">Product management</a>
-              <a href="/admin/category" class="list-group-item">Category management</a>
+              <a href="{{ route('admin.product.index') }}" class="list-group-item">Product management</a>
+              <a href="{{ route('admin.category.index') }}" class="list-group-item">Category management</a>
             </ul>
           </div>
         </div>     
