@@ -54,12 +54,14 @@ class PermissionController extends Controller
 
     public function edit($id)
     {
-        if (findByID($id) == null){
+        $permission = $this->permissionRepository->findById($id);
+
+        if (!$permission) {
             abort(404);
         }
 
         return view('admin.permission.form', [
-            'permission' => $this->permissionRepository->findById($id),
+            'permission' => $permission,
             'permissionGroups' => $this->permissionGroupRepository->getAll(),
         ]);
     }
