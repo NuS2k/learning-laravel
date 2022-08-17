@@ -13,7 +13,11 @@ class UserController extends Controller
     public function index()
     {
         return view('admin.user.index', [
+<<<<<<< Updated upstream
             'users' => User::all(),
+=======
+            'users' => $this->getSessionUsers(),
+>>>>>>> Stashed changes
         ]);
     }
 
