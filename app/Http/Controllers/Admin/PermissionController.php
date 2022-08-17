@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\PermissionRequest;
 use App\Repositories\Admin\Permission\PermissionRepositoryInterface as PermissionRepository;
 use App\Repositories\Admin\PermissionGroup\PermissionGroupRepositoryInterface as PermissionGroupRepository;
 
@@ -31,7 +32,7 @@ class PermissionController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(PermissionRequest $request)
     {
         $this->permissionRepository->save($request->validated());
 
@@ -53,13 +54,17 @@ class PermissionController extends Controller
 
     public function edit($id)
     {
+        if (findByID($id) == null){
+            abort(404);
+        }
+
         return view('admin.permission.form', [
             'permission' => $this->permissionRepository->findById($id),
             'permissionGroups' => $this->permissionGroupRepository->getAll(),
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(PermissionRequest $request, $id)
     {
         $this->permissionRepository->save($request->validated(), ['id' => $id]);
 
