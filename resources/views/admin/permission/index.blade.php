@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="col-md-7 mb-3">
+@if(session('alert'))
+    <section class='alert alert-success'>{{session('alert')}}</section>
+    @endif
   <div class="row" style="background-color: rgb(241, 241, 241);">
         <div class="container-fluid">
         <div class="d-flex justify-content-between">
@@ -53,7 +56,7 @@
             </table>
         </div>
         </div>
-    </div>  
+    </div>
 </div>
 
 @endsection

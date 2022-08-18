@@ -36,14 +36,12 @@ class PermissionController extends Controller
     {
         $this->permissionRepository->save($request->validated());
 
-        return redirect()->route('admin.permission.index');
+        return redirect()->route('admin.permission.index')->with('alert', 'Successfuly Created');
     }
 
     public function show($id)
     {
-        $permission = $this->permissionRepository->findById($id);
-
-        if (!$permission) {
+        if (! $permission = $this->permissionRepository->findById($id)) {
             abort(404);
         }
 
@@ -54,9 +52,7 @@ class PermissionController extends Controller
 
     public function edit($id)
     {
-        $permission = $this->permissionRepository->findById($id);
-
-        if (!$permission) {
+        if (! $permission = $this->permissionRepository->findById($id)) {
             abort(404);
         }
 
@@ -70,13 +66,13 @@ class PermissionController extends Controller
     {
         $this->permissionRepository->save($request->validated(), ['id' => $id]);
 
-        return redirect()->route('admin.permission.index');
+        return redirect()->route('admin.permission.index')->with('alert', 'Successfully Updated');
     }
 
     public function destroy($id)
     {
         $this->permissionRepository->deleteById($id);
 
-        return redirect()->route('admin.permission.index');
+        return redirect()->route('admin.permission.index')->with('alert', 'Successfully Deleted');
     }
 }
