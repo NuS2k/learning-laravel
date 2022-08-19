@@ -36,7 +36,7 @@ class PermissionController extends Controller
     {
         $this->permissionRepository->save($request->validated());
 
-        return redirect()->route('admin.permission.index')->with('alert', 'Successfuly Created');
+        return redirect()->route('admin.permission.index')->with('alert', 'Successfully Created');
     }
 
     public function show($id)
