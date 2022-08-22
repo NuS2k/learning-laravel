@@ -80,4 +80,9 @@ class User extends Authenticatable implements MustVerifyEmail
             'verified_at' => $this->freshTimestamp(),
         ])->save();
     }
+
+    public function longcustomer()
+    {
+        return $this->belongsToMany(Customer::class);
+    }
 }

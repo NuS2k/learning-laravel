@@ -24,6 +24,8 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'verified', 'verify.
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
     Route::resource('permission-group', PermissionGroupController::class);
+    Route::resource('customer', CustomerController::class);
+
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);
 });
