@@ -20,6 +20,7 @@ class Permission extends Model
     }
 
     protected $fillable = [
+        'id',
         'name',
         'key',
         'permission_group_id',

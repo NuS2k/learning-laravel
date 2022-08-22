@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\SendMailUserProfileRequest;
 use App\Http\Requests\Admin\UserRequest;
 use App\Services\MailService;
 use Illuminate\Support\Facades\Session;
+use App\Models\User;
 
 class UserController extends Controller
 {
