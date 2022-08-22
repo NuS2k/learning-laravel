@@ -4,21 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SendMailUserProfileRequest;
+use App\Models\User;
 use App\Http\Requests\Admin\UserRequest;
 use App\Services\MailService;
 use Illuminate\Support\Facades\Session;
-use App\Models\User;
 
 class UserController extends Controller
 {
     public function index()
     {
         return view('admin.user.index', [
-<<<<<<< Updated upstream
             'users' => User::all(),
-=======
-            'users' => $this->getSessionUsers(),
->>>>>>> Stashed changes
         ]);
     }
 
