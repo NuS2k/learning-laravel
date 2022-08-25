@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PermissionGroupController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
