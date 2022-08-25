@@ -22,4 +22,9 @@ class Role extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function longcustomer()
+    {
+        return $this->belongsToMany(Customer::class);
+    }
 }

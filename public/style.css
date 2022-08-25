@@ -33,13 +33,13 @@ p {
 }
 .center {
     text-align: center;
-}  
+}
 .left{
     background-color: aquamarine;
     border: aqua;
-} 
+}
 .sidenav {
-    height: 725px;
+    height: 800px;
     width: 450px;
     position: relative;
     z-index: 1;
@@ -54,7 +54,7 @@ p {
     border-style: solid;
     border-width: thin;
 }
-  
+
   .sidenav a {
     padding: 6px 8px 15px 25px;
     text-decoration: none;
@@ -62,8 +62,8 @@ p {
     color: black;
     display: block;
 
-    
-    
+
+
 }
 .sidenav .ul .li .a{
     border: none;
